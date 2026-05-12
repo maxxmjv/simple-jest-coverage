@@ -17,5 +17,14 @@ describe('Bank', () => {
     })
   })
 
-  // TODO: withdraw tests to increase coverage according to the threshold
+  describe('withdraw', () => {
+    test('decreases balance by the specified amount', () => {
+      bank.deposit(100)
+      expect(bank.getBalance()).toBe(100)
+
+      bank.withdraw(50)
+      expect(bank.getBalance()).toBe(50)
+    })
+  })
+
 })
