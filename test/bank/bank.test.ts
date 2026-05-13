@@ -27,4 +27,21 @@ describe('Bank', () => {
     })
   })
 
+  describe('hasEnoughBalance', () => {
+    test('should return false if balance is less than 25', () => {
+      bank.deposit(15);
+      expect(bank.hasEnoughBalance()).toBe(false);
+    })
+
+    test('should return true if balance is 25', () => {
+      bank.deposit(25);
+      expect(bank.hasEnoughBalance()).toBe(true);
+    })
+
+    test('should return true if balance is more than 25', () => {
+      bank.deposit(40);
+      expect(bank.hasEnoughBalance()).toBe(true);
+    })
+  })
 })
+
